@@ -31,6 +31,13 @@ data class Vector4f(
     val normalized: Vector4f
         get() = this / length
 
+    fun set(x: Float, y: Float, z: Float, w: Float) {
+        this.x = x
+        this.y = y
+        this.z = z
+        this.w = w
+    }
+
     operator fun set(index: Int, value: Float) {
         if (index > 3) {
             throw IndexOutOfBoundsException("Index $index is out of bounds for Vector4f.")
@@ -132,7 +139,7 @@ data class Vector4f(
     fun dot(other: Vector4f): Float {
         return x * other.x + y * other.y + z * other.z + w * other.w
     }
-    
+
     /**
      * @return a new Vector3f rotated around a unit (normalized) Quaternionf, ignoring the "w" component of the Vector4f.
      * @param other The Quaternionf in which we are rotating by.

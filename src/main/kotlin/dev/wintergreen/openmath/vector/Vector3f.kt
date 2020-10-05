@@ -29,6 +29,12 @@ data class Vector3f(
     val normalized: Vector3f
         get() = this / length
 
+    fun set(x: Float, y: Float, z: Float) {
+        this.x = x
+        this.y = y
+        this.z = z
+    }
+
     operator fun plus(other: Vector3f): Vector3f {
         return Vector3f(x + other.x, y + other.y, z + other.z)
     }

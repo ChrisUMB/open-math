@@ -50,6 +50,11 @@ data class Vector2f(
     val normalized: Vector2f
         get() = this / length
 
+    fun set(x: Float, y: Float) {
+        this.x = x
+        this.y = y
+    }
+
     operator fun plus(other: Vector2f): Vector2f {
         return Vector2f(x + other.x, y + other.y)
     }
